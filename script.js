@@ -2,6 +2,17 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
+  const setDate=document.getElementById('currentDay');
+  hour=dayjs().get('hour');
+  day=dayjs().get('date');
+  month=dayjs().get('month')+1;
+  year=dayjs().get('year');
+  let currentDate = `${month}-${day}-${year}`;
+  //setDate.innerText=currentDate;
+  console.log(hour);
+  var today = moment().format("dddd, MMMM Do, HH:mm A");
+  $('#currentDay').text(today);
+   // "17-6-2022"
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
