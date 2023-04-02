@@ -1,20 +1,39 @@
 setDate=document.getElementById("currentDay");
 var today = dayjs().format("dddd, MMMM D, YYYY");
+var hour = dayjs().get("hour");
+console.log(hour);
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
   setDate.innerText=today;
-  const btns = document.querySelectorAll('button[id^=saveBtn]')
-
   const buttons = document.querySelectorAll('.saveBtn')
   buttons.forEach(function(currentBtn){
     currentBtn.addEventListener('click', saveData)
   })
-  function saveData(){
+  function saveData(button){
 
   }
-  
+  function changeColor(){
+    $(".time-block").each(function() {
+    var currentId = this.id.split('-');;
+    var blockHour = currentId[1]
+console.log(blockHour);
+      if (blockHour > hour) {
+        $(this).removeClass('past');
+        $(this).removeClass('present');
+        $(this).addClass('future');
+      } else if (blockHour<hour) {
+        $(this).removeClass('present');
+        $(this).removeClass('future');
+        $(this).addClass('past');
+      } else {
+        $(this).removeClass('past');
+        $(this).removeClass('future');
+        $(this).addClass('present');
+      }
+  })
+};
 
    // "17-6-2022"
   // TODO: Add a listener for click events on the save button. This code should
@@ -35,5 +54,5 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
-
+  changeColor();
 });
