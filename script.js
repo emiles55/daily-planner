@@ -23,14 +23,17 @@ console.log(blockHour);
         $(this).removeClass('past');
         $(this).removeClass('present');
         $(this).addClass('future');
+        console.log("blockHour future");
       } else if (blockHour<hour) {
         $(this).removeClass('present');
         $(this).removeClass('future');
         $(this).addClass('past');
+        console.log("blockHour past");
       } else {
         $(this).removeClass('past');
         $(this).removeClass('future');
         $(this).addClass('present');
+        console.log("blockHour present");
       }
   })
 };
