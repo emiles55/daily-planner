@@ -12,7 +12,9 @@ $(function () {
     currentBtn.addEventListener('click', saveData)
   })
   function saveData(button){
-
+    temp = $(this.parentNode.querySelector('textarea')).val();
+  localStorage.setItem(this.parentNode.id, temp);
+  console.log(localStorage);
   }
   function changeColor(){
     $(".time-block").each(function() {
@@ -36,6 +38,18 @@ console.log(blockHour);
         console.log("blockHour present");
       }
   })
+ 
+
+  $("#hour-9 .description").val(localStorage.getItem("hour-9"));
+  $("#hour-10 .description").val(localStorage.getItem("hour-10"));
+  $("#hour-11 .description").val(localStorage.getItem("hour-11"));
+  $("#hour-12 .description").val(localStorage.getItem("hour-12"));
+  $("#hour-13 .description").val(localStorage.getItem("hour-13"));
+  $("#hour-14 .description").val(localStorage.getItem("hour-14"));
+  $("#hour-15 .description").val(localStorage.getItem("hour-15"));
+  $("#hour-16 .description").val(localStorage.getItem("hour-16"));
+  $("#hour-17 .description").val(localStorage.getItem("hour-17"));
+
 };
 
    // "17-6-2022"
@@ -58,14 +72,5 @@ console.log(blockHour);
   //
   // TODO: Add code to display the current date in the header of the page.
   changeColor();
-  $("#hour8 .description").val(localStorage.getItem("hour8"));
-  $("#hour9 .description").val(localStorage.getItem("hour9"));
-  $("#hour10 .description").val(localStorage.getItem("hour10"));
-  $("#hour11 .description").val(localStorage.getItem("hour11"));
-  $("#hour12 .description").val(localStorage.getItem("hour12"));
-  $("#hour13 .description").val(localStorage.getItem("hour13"));
-  $("#hour14 .description").val(localStorage.getItem("hour14"));
-  $("#hour15 .description").val(localStorage.getItem("hour15"));
-  $("#hour16 .description").val(localStorage.getItem("hour16"));
-  $("#hour17 .description").val(localStorage.getItem("hour17"));
+
 });
