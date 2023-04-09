@@ -31,4 +31,5 @@ THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
 ```
+![workdayscheduler](https://user-images.githubusercontent.com/46115810/230750411-4b4c706c-b25e-4f8b-b2cf-3111831b2cb1.jpeg)
 
